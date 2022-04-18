@@ -1,0 +1,386 @@
+2021-11-22 15:20:43.478577: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.11.0
+I1122 15:20:48.115916 47598688434624 templates.py:857] Using precomputed obsolete pdbs /apps/db/AlphaFold/pdb_mmcif/obsolete.dat.
+I1122 15:20:48.422498 47598688434624 xla_bridge.py:236] Unable to initialize backend 'tpu_driver': Not found: Unable to find driver in registry given worker: 
+2021-11-22 15:20:48.731135: E external/org_tensorflow/tensorflow/stream_executor/cuda/cuda_driver.cc:271] failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+I1122 15:20:48.736831 47598688434624 xla_bridge.py:236] Unable to initialize backend 'gpu': Failed precondition: No visible GPU devices.
+I1122 15:20:48.737694 47598688434624 xla_bridge.py:236] Unable to initialize backend 'tpu': Invalid argument: TpuPlatform is not available.
+W1122 15:20:48.737890 47598688434624 xla_bridge.py:240] No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+I1122 15:20:53.743742 47598688434624 run_AlphaFold2.1.0.py:429] Have 5 models: ['model_1', 'model_2', 'model_3', 'model_4', 'model_5']
+I1122 15:20:53.744154 47598688434624 run_AlphaFold2.1.0.py:442] Using random seed 1629173875158499432 for the data pipeline
+I1122 15:20:53.744689 47598688434624 run_AlphaFold2.1.0.py:191] Predicting HsITPK1
+I1122 15:20:53.759478 47598688434624 jackhmmer.py:133] Launching subprocess "/apps/eb/HMMER/3.3.2-gompic-2020b/bin/jackhmmer -o /dev/null -A /tmp/tmpm5w4j_lw/output.sto --noali --F1 0.0005 --F2 5e-05 --F3 5e-07 --incE 0.0001 -E 0.0001 --cpu 8 -N 1 /scratch/sec84829/DocampoLaboratory/HsITPK1.fasta /apps/db/AlphaFold/uniref90/uniref90.fasta"
+I1122 15:20:53.832109 47598688434624 utils.py:36] Started Jackhmmer (uniref90.fasta) query
+I1122 15:26:18.640705 47598688434624 utils.py:40] Finished Jackhmmer (uniref90.fasta) query in 324.808 seconds
+I1122 15:26:18.709332 47598688434624 jackhmmer.py:133] Launching subprocess "/apps/eb/HMMER/3.3.2-gompic-2020b/bin/jackhmmer -o /dev/null -A /tmp/tmpgcu_ts27/output.sto --noali --F1 0.0005 --F2 5e-05 --F3 5e-07 --incE 0.0001 -E 0.0001 --cpu 8 -N 1 /scratch/sec84829/DocampoLaboratory/HsITPK1.fasta /apps/db/AlphaFold/mgnify/mgy_clusters.fa"
+I1122 15:26:18.794758 47598688434624 utils.py:36] Started Jackhmmer (mgy_clusters.fa) query
+I1122 15:32:33.543761 47598688434624 utils.py:40] Finished Jackhmmer (mgy_clusters.fa) query in 374.748 seconds
+I1122 15:32:34.375855 47598688434624 hhsearch.py:85] Launching subprocess "/apps/eb/HH-suite/3.3.0-gompic-2020b/bin/hhsearch -i /tmp/tmpvnkvhpcw/query.a3m -o /tmp/tmpvnkvhpcw/output.hhr -maxseq 1000000 -d /apps/db/AlphaFold/pdb70/pdb70"
+I1122 15:32:34.452935 47598688434624 utils.py:36] Started HHsearch query
+I1122 15:33:29.990615 47598688434624 utils.py:40] Finished HHsearch query in 55.537 seconds
+I1122 15:33:30.460287 47598688434624 hhblits.py:130] Launching subprocess "/apps/eb/HH-suite/3.3.0-gompic-2020b/bin/hhblits -i /scratch/sec84829/DocampoLaboratory/HsITPK1.fasta -cpu 4 -oa3m /tmp/tmpzgymu7fd/output.a3m -o /dev/null -n 3 -e 0.001 -maxseq 1000000 -realign_max 100000 -maxfilt 100000 -min_prefilter_hits 1000 -d /apps/db/AlphaFold/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt -d /apps/db/AlphaFold/uniclust30/uniclust30_2018_08/uniclust30_2018_08"
+I1122 15:33:30.538815 47598688434624 utils.py:36] Started HHblits query
+I1122 16:04:25.775626 47598688434624 utils.py:40] Finished HHblits query in 1855.236 seconds
+I1122 16:04:26.034902 47598688434624 templates.py:878] Searching for template for: MQTFLKGKRVGYWLSEKKIKKLNFQAFAELCRKRGMEVVQLNLSRPIEEQGPLDVIIHKLTDVILEADQNDSQSLELVHRFQEYIDAHPETIVLDPLPAIRTLLDRSKSYELIRKIEAYMEDDRICSPPFMELTSLCGDDTMRLLEKNGLTFPFICKTRVAHGTNSHEMAIVFNQEGLNAIQPPCVVQNFINHNAVLYKVFVVGESYTVVQRPSLKNFSAGTSDRESIFFNSHNVSKPESSSVLTELDKIEGVFERPSDEVIRELSRALRQALGVSLFGIDIIINNQTGQHAVIDINAFPGYEGVSEFFTDLLNHIATVLQGQSTAMAATGDVALLRHSKLLAEPAGGLVGERTCSASPGCCGSMMGQDAPWKAEADAGGTAKLPHQRLGCNAGVSPSFQQHCVASLATKASSQ
+I1122 16:04:26.740802 47598688434624 templates.py:267] Found an exact template match 2qb5_A.
+I1122 16:04:27.145401 47598688434624 templates.py:267] Found an exact template match 2q7d_B.
+I1122 16:04:27.352388 47598688434624 templates.py:267] Found an exact template match 1z2n_X.
+I1122 16:04:27.563454 47598688434624 templates.py:267] Found an exact template match 1z2o_X.
+I1122 16:04:27.772880 47598688434624 templates.py:267] Found an exact template match 3t7a_A.
+I1122 16:04:28.232134 47598688434624 templates.py:267] Found an exact template match 4nzn_A.
+I1122 16:04:28.440712 47598688434624 templates.py:267] Found an exact template match 4nzo_A.
+I1122 16:04:29.191843 47598688434624 templates.py:267] Found an exact template match 5d8d_D.
+I1122 16:04:29.208821 47598688434624 templates.py:267] Found an exact template match 5d8d_B.
+I1122 16:04:29.720058 47598688434624 templates.py:267] Found an exact template match 4c5b_B.
+I1122 16:04:30.413716 47598688434624 templates.py:267] Found an exact template match 4c5c_A.
+I1122 16:04:31.075419 47598688434624 templates.py:267] Found an exact template match 3vpb_B.
+I1122 16:04:31.256438 47598688434624 templates.py:267] Found an exact template match 1iov_A.
+I1122 16:04:31.828248 47598688434624 templates.py:267] Found an exact template match 5nrh_B.
+I1122 16:04:32.399448 47598688434624 templates.py:267] Found an exact template match 5nri_A.
+I1122 16:04:33.797807 47598688434624 templates.py:267] Found an exact template match 5zct_A.
+I1122 16:04:33.816721 47598688434624 templates.py:267] Found an exact template match 5zct_C.
+I1122 16:04:34.801930 47598688434624 templates.py:267] Found an exact template match 3r5x_D.
+I1122 16:04:35.187060 47598688434624 templates.py:267] Found an exact template match 5i47_A.
+I1122 16:04:35.202504 47598688434624 templates.py:267] Found an exact template match 5i47_B.
+I1122 16:04:35.764850 47598688434624 pipeline.py:221] Uniref90 MSA size: 1880 sequences.
+I1122 16:04:35.765084 47598688434624 pipeline.py:222] BFD MSA size: 3216 sequences.
+I1122 16:04:35.765168 47598688434624 pipeline.py:223] MGnify MSA size: 137 sequences.
+I1122 16:04:35.765245 47598688434624 pipeline.py:224] Final (deduplicated) MSA size: 5205 sequences.
+I1122 16:04:35.765475 47598688434624 pipeline.py:226] Total number of templates (NB: this can include bad templates and is later filtered to top 4): 20.
+I1122 16:04:35.835755 47598688434624 run_AlphaFold2.1.0.py:227] Running model model_1 on HsITPK1
+2021-11-22 16:04:39.777961: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-11-22 16:04:39.815663: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcuda.so.1
+2021-11-22 16:04:41.406011: E tensorflow/stream_executor/cuda/cuda_driver.cc:328] failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+2021-11-22 16:04:41.406326: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (c2-8.compute.lan): /proc/driver/nvidia/version does not exist
+2021-11-22 16:04:41.674635: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE3 SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-11-22 16:04:41.720844: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-11-22 16:04:41.721202: I tensorflow/core/common_runtime/process_util.cc:146] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+2021-11-22 16:04:41.813187: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2021-11-22 16:04:41.919865: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2399805000 Hz
+I1122 16:04:56.989253 47598688434624 model.py:165] Running predict with shape(feat) = {'aatype': (32, 414), 'residue_index': (32, 414), 'seq_length': (32,), 'template_aatype': (32, 4, 414), 'template_all_atom_masks': (32, 4, 414, 37), 'template_all_atom_positions': (32, 4, 414, 37, 3), 'template_sum_probs': (32, 4, 1), 'is_distillation': (32,), 'seq_mask': (32, 414), 'msa_mask': (32, 508, 414), 'msa_row_mask': (32, 508), 'random_crop_to_size_seed': (32, 2), 'template_mask': (32, 4), 'template_pseudo_beta': (32, 4, 414, 3), 'template_pseudo_beta_mask': (32, 4, 414), 'atom14_atom_exists': (32, 414, 14), 'residx_atom14_to_atom37': (32, 414, 14), 'residx_atom37_to_atom14': (32, 414, 37), 'atom37_atom_exists': (32, 414, 37), 'extra_msa': (32, 5120, 414), 'extra_msa_mask': (32, 5120, 414), 'extra_msa_row_mask': (32, 5120), 'bert_mask': (32, 508, 414), 'true_msa': (32, 508, 414), 'extra_has_deletion': (32, 5120, 414), 'extra_deletion_value': (32, 5120, 414), 'msa_feat': (32, 508, 414, 49), 'target_feat': (32, 414, 22)}
+2021-11-22 16:09:47.251703: E external/org_tensorflow/tensorflow/compiler/xla/service/slow_operation_alarm.cc:55] 
+********************************
+Very slow compile?  If you want to file a bug, run with envvar XLA_FLAGS=--xla_dump_to=/tmp/foo and attach the results.
+Compiling module jit_apply_fn.150053
+********************************
+I1123 05:32:25.017370 47598688434624 model.py:175] Output shape was {'distogram': {'bin_edges': (63,), 'logits': (414, 414, 64)}, 'experimentally_resolved': {'logits': (414, 37)}, 'masked_msa': {'logits': (508, 414, 23)}, 'predicted_lddt': {'logits': (414, 50)}, 'structure_module': {'final_atom_mask': (414, 37), 'final_atom_positions': (414, 37, 3)}, 'plddt': (414,), 'ranking_confidence': ()}
+I1123 05:32:25.027131 47598688434624 run_AlphaFold2.1.0.py:239] Total JAX model model_1 on HsITPK1 predict time (includes compilation time, see --benchmark): 48448.0s
+I1123 05:32:59.661619 47598688434624 amber_minimize.py:179] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {<Residue 413 (GLN) of chain 0>: ['OXT']}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I1123 05:33:00.237344 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 1 of 100.
+I1123 05:33:01.855957 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:33:14.851681 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:33:14.873162 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 2 of 100.
+I1123 05:33:15.700611 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:33:27.607864 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:33:27.625365 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 3 of 100.
+I1123 05:33:28.438504 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:33:41.133550 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:33:41.154619 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 4 of 100.
+I1123 05:33:42.666465 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:33:55.421925 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:33:55.433118 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 5 of 100.
+I1123 05:33:56.235615 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:34:08.313034 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:34:08.330613 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 6 of 100.
+I1123 05:34:09.921080 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:34:22.727823 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:34:22.745421 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 7 of 100.
+I1123 05:34:23.570245 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:34:36.465306 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:34:36.487203 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 8 of 100.
+I1123 05:34:37.308563 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:34:50.176158 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:34:50.199472 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 9 of 100.
+I1123 05:34:51.824845 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:35:04.005485 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:35:04.023269 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 10 of 100.
+I1123 05:35:04.846160 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:35:17.883817 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:35:17.900300 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 11 of 100.
+I1123 05:35:19.466246 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:35:32.445988 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:35:32.471725 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 12 of 100.
+I1123 05:35:33.288066 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:35:45.520462 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:35:45.538815 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 13 of 100.
+I1123 05:35:46.368839 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:35:58.298266 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:35:58.315764 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 14 of 100.
+I1123 05:35:59.900658 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:36:12.909496 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:36:12.928752 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 15 of 100.
+I1123 05:36:13.837448 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:36:28.868030 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:36:28.883783 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 16 of 100.
+I1123 05:36:30.525103 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:36:43.923377 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:36:43.941946 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 17 of 100.
+I1123 05:36:44.770005 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:36:57.058469 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:36:57.068279 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 18 of 100.
+I1123 05:36:57.874019 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:37:11.019829 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:37:11.037140 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 19 of 100.
+I1123 05:37:12.612589 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:37:25.011145 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:37:25.038218 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 20 of 100.
+I1123 05:37:26.015372 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:37:38.533663 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:37:38.552241 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 21 of 100.
+I1123 05:37:40.039703 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:37:52.817268 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:37:52.834887 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 22 of 100.
+I1123 05:37:53.704434 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:38:06.514400 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:38:06.531952 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 23 of 100.
+I1123 05:38:07.340222 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:38:19.465795 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:38:19.487676 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 24 of 100.
+I1123 05:38:21.523743 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:38:33.985821 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:38:33.997766 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 25 of 100.
+I1123 05:38:34.793664 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:38:47.615590 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:38:47.627827 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 26 of 100.
+I1123 05:38:49.171859 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:39:02.103106 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:39:02.112951 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 27 of 100.
+I1123 05:39:02.895962 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:39:14.939062 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:39:14.951073 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 28 of 100.
+I1123 05:39:15.744697 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:39:28.361289 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:39:28.371828 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 29 of 100.
+I1123 05:39:29.855094 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:39:42.463895 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:39:42.489329 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 30 of 100.
+I1123 05:39:43.309952 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:39:55.705165 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:39:55.722471 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 31 of 100.
+I1123 05:39:57.263860 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:40:10.247562 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:40:10.260138 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 32 of 100.
+I1123 05:40:11.079694 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:40:24.159612 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:40:24.178072 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 33 of 100.
+I1123 05:40:25.014056 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:40:38.023171 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:40:38.040327 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 34 of 100.
+I1123 05:40:39.635816 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:40:51.800453 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:40:51.810111 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 35 of 100.
+I1123 05:40:52.712450 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:41:05.246073 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:41:05.259881 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 36 of 100.
+I1123 05:41:06.697407 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:41:19.289103 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:41:19.307249 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 37 of 100.
+I1123 05:41:20.133203 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:41:32.231015 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:41:32.248811 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 38 of 100.
+I1123 05:41:33.069900 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:41:45.483870 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:41:45.501412 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 39 of 100.
+I1123 05:41:47.079697 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:42:00.285274 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:42:00.306539 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 40 of 100.
+I1123 05:42:01.225562 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:42:16.416842 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:42:16.437742 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 41 of 100.
+I1123 05:42:17.957310 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:42:31.474771 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:42:31.484933 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 42 of 100.
+I1123 05:42:32.290752 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:42:44.398691 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:42:44.416246 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 43 of 100.
+I1123 05:42:45.233022 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:42:57.989447 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:42:58.011023 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 44 of 100.
+I1123 05:42:59.586190 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:43:12.423273 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:43:12.437839 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 45 of 100.
+I1123 05:43:13.304200 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:43:25.742484 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:43:25.760099 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 46 of 100.
+I1123 05:43:27.338196 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:43:40.341816 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:43:40.357974 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 47 of 100.
+I1123 05:43:41.171019 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:43:54.353516 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:43:54.377475 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 48 of 100.
+I1123 05:43:55.187174 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:44:07.673732 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:44:07.686311 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 49 of 100.
+I1123 05:44:09.825762 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:44:22.403025 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:44:22.413084 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 50 of 100.
+I1123 05:44:23.222106 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:44:36.279392 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:44:36.296005 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 51 of 100.
+I1123 05:44:37.858772 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:44:51.167312 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:44:51.181083 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 52 of 100.
+I1123 05:44:51.971986 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:45:04.265516 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:45:04.282832 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 53 of 100.
+I1123 05:45:05.095936 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:45:18.074101 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:45:18.091872 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 54 of 100.
+I1123 05:45:19.685664 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:45:32.231237 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:45:32.245879 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 55 of 100.
+I1123 05:45:33.072894 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:45:45.070037 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:45:45.084100 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 56 of 100.
+I1123 05:45:46.531334 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:45:59.279762 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:45:59.298678 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 57 of 100.
+I1123 05:46:00.136059 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:46:12.779699 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:46:12.798027 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 58 of 100.
+I1123 05:46:13.621493 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:46:25.597382 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:46:25.614617 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 59 of 100.
+I1123 05:46:27.591732 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:46:40.073019 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:46:40.094141 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 60 of 100.
+I1123 05:46:40.925743 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:46:53.978157 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:46:53.994625 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 61 of 100.
+I1123 05:46:55.496972 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:47:08.221847 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:47:08.239075 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 62 of 100.
+I1123 05:47:09.061149 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:47:21.174676 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:47:21.185119 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 63 of 100.
+I1123 05:47:21.971603 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:47:34.317755 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:47:34.337574 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 64 of 100.
+I1123 05:47:35.911090 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:47:48.952095 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:47:48.970091 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 65 of 100.
+I1123 05:47:49.870908 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:48:05.291275 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:48:05.311483 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 66 of 100.
+I1123 05:48:07.089798 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:48:20.777673 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:48:20.794260 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 67 of 100.
+I1123 05:48:21.598712 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:48:33.783290 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:48:33.803502 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 68 of 100.
+I1123 05:48:34.630488 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:48:47.471411 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:48:47.489956 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 69 of 100.
+I1123 05:48:49.005030 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:49:01.761734 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:49:01.781114 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 70 of 100.
+I1123 05:49:02.759092 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:49:15.111417 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:49:15.128074 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 71 of 100.
+I1123 05:49:16.688578 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:49:29.712525 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:49:29.737534 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 72 of 100.
+I1123 05:49:30.563840 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:49:43.483284 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:49:43.502442 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 73 of 100.
+I1123 05:49:44.315573 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:49:56.630950 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:49:56.641493 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 74 of 100.
+I1123 05:49:58.675758 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:50:11.327240 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:50:11.345202 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 75 of 100.
+I1123 05:50:12.156134 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:50:25.391506 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:50:25.403733 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 76 of 100.
+I1123 05:50:26.854093 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:50:40.077992 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:50:40.096864 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 77 of 100.
+I1123 05:50:40.918061 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:50:53.295878 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:50:53.313944 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 78 of 100.
+I1123 05:50:54.138846 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:51:06.855225 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:51:06.871963 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 79 of 100.
+I1123 05:51:08.449258 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:51:21.257396 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:51:21.269869 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 80 of 100.
+I1123 05:51:22.064712 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:51:34.060165 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:51:34.070726 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 81 of 100.
+I1123 05:51:35.600664 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:51:48.144744 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:51:48.161973 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 82 of 100.
+I1123 05:51:49.008015 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:52:01.557297 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:52:01.573162 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 83 of 100.
+I1123 05:52:02.379587 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:52:15.406173 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:52:15.428318 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 84 of 100.
+I1123 05:52:17.032033 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:52:29.835402 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:52:29.855903 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 85 of 100.
+I1123 05:52:30.810594 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:52:43.514252 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:52:43.536137 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 86 of 100.
+I1123 05:52:45.576709 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:52:57.969218 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:52:57.989701 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 87 of 100.
+I1123 05:52:58.890307 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:53:11.085434 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:53:11.102969 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 88 of 100.
+I1123 05:53:11.913168 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:53:24.275228 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:53:24.299156 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 89 of 100.
+I1123 05:53:25.818043 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:53:37.928629 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:53:37.939030 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 90 of 100.
+I1123 05:53:38.725001 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:53:52.151010 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:53:52.168243 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 91 of 100.
+I1123 05:53:55.021489 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:54:08.820941 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:54:08.830969 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 92 of 100.
+I1123 05:54:09.634199 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:54:23.039387 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:54:23.064712 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 93 of 100.
+I1123 05:54:23.882865 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:54:35.982818 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:54:35.993099 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 94 of 100.
+I1123 05:54:37.485909 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:54:50.126601 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:54:50.136805 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 95 of 100.
+I1123 05:54:50.926699 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:55:03.528676 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:55:03.546148 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 96 of 100.
+I1123 05:55:05.072494 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:55:17.290447 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:55:17.319943 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 97 of 100.
+I1123 05:55:18.318823 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:55:30.919345 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:55:30.938070 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 98 of 100.
+I1123 05:55:31.765080 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:55:44.653887 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:55:44.671930 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 99 of 100.
+I1123 05:55:46.272342 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:55:59.100587 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+I1123 05:55:59.110607 47598688434624 amber_minimize.py:407] Minimizing protein, attempt 100 of 100.
+I1123 05:55:59.894567 47598688434624 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1123 05:56:12.006117 47598688434624 amber_minimize.py:416] Error initializing CUDA: CUDA_ERROR_NO_DEVICE (100) at /dev/shm/shtsai/AlphaFold/2.1.0/fosscuda-2020b/openmm-7.5.1/platforms/cuda/src/CudaContext.cpp:138
+Traceback (most recent call last):
+  File "/scratch/sec84829/DocampoLaboratory/run_AlphaFold2.1.0.py", line 467, in <module>
+    app.run(main)
+  File "/apps/eb/jax/0.2.19-fosscuda-2020b/lib/python3.8/site-packages/absl/app.py", line 312, in run
+    _run_main(main, args)
+  File "/apps/eb/jax/0.2.19-fosscuda-2020b/lib/python3.8/site-packages/absl/app.py", line 258, in _run_main
+    sys.exit(main(argv))
+  File "/scratch/sec84829/DocampoLaboratory/run_AlphaFold2.1.0.py", line 448, in main
+    predict_structure(
+  File "/scratch/sec84829/DocampoLaboratory/run_AlphaFold2.1.0.py", line 279, in predict_structure
+    relaxed_pdb_str, _, _ = amber_relaxer.process(prot=unrelaxed_protein)
+  File "/apps/eb/AlphaFold/2.1.0-fosscuda-2020b/lib/python3.8/site-packages/alphafold/relax/relax.py", line 58, in process
+    out = amber_minimize.run_pipeline(
+  File "/apps/eb/AlphaFold/2.1.0-fosscuda-2020b/lib/python3.8/site-packages/alphafold/relax/amber_minimize.py", line 472, in run_pipeline
+    ret = _run_one_iteration(
+  File "/apps/eb/AlphaFold/2.1.0-fosscuda-2020b/lib/python3.8/site-packages/alphafold/relax/amber_minimize.py", line 418, in _run_one_iteration
+    raise ValueError(f"Minimization failed after {max_attempts} attempts.")
+ValueError: Minimization failed after 100 attempts.

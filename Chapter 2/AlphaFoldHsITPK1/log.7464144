@@ -1,0 +1,201 @@
+2021-11-28 17:02:36.882530: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.11.0
+I1128 17:03:06.753231 47822399228352 templates.py:857] Using precomputed obsolete pdbs /apps/db/AlphaFold/2.1/pdb_mmcif/obsolete.dat.
+I1128 17:03:07.209266 47822399228352 xla_bridge.py:236] Unable to initialize backend 'tpu_driver': Not found: Unable to find driver in registry given worker: 
+I1128 17:03:07.343485 47822399228352 xla_bridge.py:236] Unable to initialize backend 'tpu': Invalid argument: TpuPlatform is not available.
+I1128 17:03:12.233972 47822399228352 run_AlphaFold2.1.1.py:427] Have 5 models: ['model_1', 'model_2', 'model_3', 'model_4', 'model_5']
+I1128 17:03:12.234185 47822399228352 run_AlphaFold2.1.1.py:440] Using random seed 531166401488266625 for the data pipeline
+I1128 17:03:12.234369 47822399228352 run_AlphaFold2.1.1.py:190] Predicting HsITPK1
+I1128 17:03:12.273963 47822399228352 jackhmmer.py:133] Launching subprocess "/apps/eb/HMMER/3.3.2-gompic-2020b/bin/jackhmmer -o /dev/null -A /tmp/tmpmhw0dloc/output.sto --noali --F1 0.0005 --F2 5e-05 --F3 5e-07 --incE 0.0001 -E 0.0001 --cpu 8 -N 1 /scratch/sec84829/DocampoLaboratory/HsITPK1.fasta /apps/db/AlphaFold/2.1/uniref90/uniref90.fasta"
+I1128 17:03:12.306054 47822399228352 utils.py:36] Started Jackhmmer (uniref90.fasta) query
+I1128 17:07:22.282891 47822399228352 utils.py:40] Finished Jackhmmer (uniref90.fasta) query in 249.977 seconds
+I1128 17:07:22.359073 47822399228352 jackhmmer.py:133] Launching subprocess "/apps/eb/HMMER/3.3.2-gompic-2020b/bin/jackhmmer -o /dev/null -A /tmp/tmpo2dr_g_j/output.sto --noali --F1 0.0005 --F2 5e-05 --F3 5e-07 --incE 0.0001 -E 0.0001 --cpu 8 -N 1 /scratch/sec84829/DocampoLaboratory/HsITPK1.fasta /apps/db/AlphaFold/2.1/mgnify/mgy_clusters_2018_12.fa"
+I1128 17:07:22.384350 47822399228352 utils.py:36] Started Jackhmmer (mgy_clusters_2018_12.fa) query
+I1128 17:11:52.781290 47822399228352 utils.py:40] Finished Jackhmmer (mgy_clusters_2018_12.fa) query in 270.397 seconds
+I1128 17:11:53.498957 47822399228352 hhsearch.py:85] Launching subprocess "/apps/eb/HH-suite/3.3.0-gompic-2020b/bin/hhsearch -i /tmp/tmp8qi601qy/query.a3m -o /tmp/tmp8qi601qy/output.hhr -maxseq 1000000 -d /apps/db/AlphaFold/2.1/pdb70/pdb70"
+I1128 17:11:53.553579 47822399228352 utils.py:36] Started HHsearch query
+I1128 17:12:43.029549 47822399228352 utils.py:40] Finished HHsearch query in 49.475 seconds
+I1128 17:12:43.426852 47822399228352 hhblits.py:130] Launching subprocess "/apps/eb/HH-suite/3.3.0-gompic-2020b/bin/hhblits -i /scratch/sec84829/DocampoLaboratory/HsITPK1.fasta -cpu 4 -oa3m /tmp/tmpr1m8d5_j/output.a3m -o /dev/null -n 3 -e 0.001 -maxseq 1000000 -realign_max 100000 -maxfilt 100000 -min_prefilter_hits 1000 -d /apps/db/AlphaFold/2.1/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt -d /apps/db/AlphaFold/2.1/uniclust30/uniclust30_2018_08/uniclust30_2018_08"
+I1128 17:12:43.471839 47822399228352 utils.py:36] Started HHblits query
+I1128 17:40:04.686212 47822399228352 utils.py:40] Finished HHblits query in 1641.214 seconds
+I1128 17:40:04.891474 47822399228352 templates.py:878] Searching for template for: MQTFLKGKRVGYWLSEKKIKKLNFQAFAELCRKRGMEVVQLNLSRPIEEQGPLDVIIHKLTDVILEADQNDSQSLELVHRFQEYIDAHPETIVLDPLPAIRTLLDRSKSYELIRKIEAYMEDDRICSPPFMELTSLCGDDTMRLLEKNGLTFPFICKTRVAHGTNSHEMAIVFNQEGLNAIQPPCVVQNFINHNAVLYKVFVVGESYTVVQRPSLKNFSAGTSDRESIFFNSHNVSKPESSSVLTELDKIEGVFERPSDEVIRELSRALRQALGVSLFGIDIIINNQTGQHAVIDINAFPGYEGVSEFFTDLLNHIATVLQGQSTAMAATGDVALLRHSKLLAEPAGGLVGERTCSASPGCCGSMMGQDAPWKAEADAGGTAKLPHQRLGCNAGVSPSFQQHCVASLATKASSQ
+I1128 17:40:05.348862 47822399228352 templates.py:267] Found an exact template match 2qb5_A.
+I1128 17:40:05.733062 47822399228352 templates.py:267] Found an exact template match 2q7d_B.
+I1128 17:40:05.914895 47822399228352 templates.py:267] Found an exact template match 1z2n_X.
+I1128 17:40:06.117190 47822399228352 templates.py:267] Found an exact template match 1z2o_X.
+I1128 17:40:06.383540 47822399228352 templates.py:267] Found an exact template match 4nzn_A.
+I1128 17:40:06.689670 47822399228352 templates.py:267] Found an exact template match 4nzo_A.
+I1128 17:40:06.866653 47822399228352 templates.py:267] Found an exact template match 3t7a_A.
+I1128 17:40:07.471696 47822399228352 templates.py:267] Found an exact template match 5d8d_D.
+I1128 17:40:07.483927 47822399228352 templates.py:267] Found an exact template match 5d8d_B.
+I1128 17:40:07.906912 47822399228352 templates.py:267] Found an exact template match 4c5b_B.
+I1128 17:40:08.547563 47822399228352 templates.py:267] Found an exact template match 4c5c_A.
+I1128 17:40:09.117161 47822399228352 templates.py:267] Found an exact template match 3vpb_B.
+I1128 17:40:09.608510 47822399228352 templates.py:267] Found an exact template match 5nrh_B.
+I1128 17:40:10.068207 47822399228352 templates.py:267] Found an exact template match 5nri_A.
+I1128 17:40:10.215330 47822399228352 templates.py:267] Found an exact template match 1iov_A.
+I1128 17:40:11.372498 47822399228352 templates.py:267] Found an exact template match 5zct_A.
+I1128 17:40:11.385364 47822399228352 templates.py:267] Found an exact template match 5zct_C.
+I1128 17:40:11.704892 47822399228352 templates.py:267] Found an exact template match 5i47_A.
+I1128 17:40:12.475167 47822399228352 templates.py:267] Found an exact template match 3r5x_D.
+I1128 17:40:12.488395 47822399228352 templates.py:267] Found an exact template match 5i47_B.
+I1128 17:40:12.930753 47822399228352 pipeline.py:221] Uniref90 MSA size: 1969 sequences.
+I1128 17:40:12.930954 47822399228352 pipeline.py:222] BFD MSA size: 3216 sequences.
+I1128 17:40:12.931005 47822399228352 pipeline.py:223] MGnify MSA size: 137 sequences.
+I1128 17:40:12.931049 47822399228352 pipeline.py:224] Final (deduplicated) MSA size: 5293 sequences.
+I1128 17:40:12.931217 47822399228352 pipeline.py:226] Total number of templates (NB: this can include bad templates and is later filtered to top 4): 20.
+I1128 17:40:13.148766 47822399228352 run_AlphaFold2.1.1.py:225] Running model model_1 on HsITPK1
+2021-11-28 17:40:16.282427: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-11-28 17:40:16.315554: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcuda.so.1
+2021-11-28 17:40:16.318097: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties: 
+pciBusID: 0000:3b:00.0 name: Tesla P100-PCIE-16GB computeCapability: 6.0
+coreClock: 1.3285GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2021-11-28 17:40:16.318226: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.11.0
+2021-11-28 17:40:16.562765: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.11
+2021-11-28 17:40:16.562987: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublasLt.so.11
+2021-11-28 17:40:16.563097: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcufft.so.10
+2021-11-28 17:40:16.694049: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcurand.so.10
+2021-11-28 17:40:16.865787: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusolver.so.11
+2021-11-28 17:40:16.961516: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusparse.so.11
+2021-11-28 17:40:17.003198: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudnn.so.8
+2021-11-28 17:40:17.006219: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1862] Adding visible gpu devices: 0
+2021-11-28 17:40:17.163026: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE3 SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-11-28 17:40:17.179356: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-11-28 17:40:17.180072: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties: 
+pciBusID: 0000:3b:00.0 name: Tesla P100-PCIE-16GB computeCapability: 6.0
+coreClock: 1.3285GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2021-11-28 17:40:17.180124: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.11.0
+2021-11-28 17:40:17.180158: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.11
+2021-11-28 17:40:17.180181: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublasLt.so.11
+2021-11-28 17:40:17.180203: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcufft.so.10
+2021-11-28 17:40:17.180225: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcurand.so.10
+2021-11-28 17:40:17.180247: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusolver.so.11
+2021-11-28 17:40:17.180268: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusparse.so.11
+2021-11-28 17:40:17.180290: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudnn.so.8
+2021-11-28 17:40:17.181409: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1862] Adding visible gpu devices: 0
+2021-11-28 17:40:17.181458: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.11.0
+2021-11-28 17:40:18.144390: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1261] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-11-28 17:40:18.144485: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1267]      0 
+2021-11-28 17:40:18.144499: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 0:   N 
+2021-11-28 17:40:18.146439: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 13272 MB memory) -> physical GPU (device: 0, name: Tesla P100-PCIE-16GB, pci bus id: 0000:3b:00.0, compute capability: 6.0)
+2021-11-28 17:40:18.146838: I tensorflow/core/common_runtime/process_util.cc:146] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+2021-11-28 17:40:18.197612: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:196] None of the MLIR optimization passes are enabled (registered 0 passes)
+2021-11-28 17:40:18.242125: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2100000000 Hz
+I1128 17:40:29.734071 47822399228352 model.py:165] Running predict with shape(feat) = {'aatype': (32, 414), 'residue_index': (32, 414), 'seq_length': (32,), 'template_aatype': (32, 4, 414), 'template_all_atom_masks': (32, 4, 414, 37), 'template_all_atom_positions': (32, 4, 414, 37, 3), 'template_sum_probs': (32, 4, 1), 'is_distillation': (32,), 'seq_mask': (32, 414), 'msa_mask': (32, 508, 414), 'msa_row_mask': (32, 508), 'random_crop_to_size_seed': (32, 2), 'template_mask': (32, 4), 'template_pseudo_beta': (32, 4, 414, 3), 'template_pseudo_beta_mask': (32, 4, 414), 'atom14_atom_exists': (32, 414, 14), 'residx_atom14_to_atom37': (32, 414, 14), 'residx_atom37_to_atom14': (32, 414, 37), 'atom37_atom_exists': (32, 414, 37), 'extra_msa': (32, 5120, 414), 'extra_msa_mask': (32, 5120, 414), 'extra_msa_row_mask': (32, 5120), 'bert_mask': (32, 508, 414), 'true_msa': (32, 508, 414), 'extra_has_deletion': (32, 5120, 414), 'extra_deletion_value': (32, 5120, 414), 'msa_feat': (32, 508, 414, 49), 'target_feat': (32, 414, 22)}
+I1128 18:01:30.215820 47822399228352 model.py:175] Output shape was {'distogram': {'bin_edges': (63,), 'logits': (414, 414, 64)}, 'experimentally_resolved': {'logits': (414, 37)}, 'masked_msa': {'logits': (508, 414, 23)}, 'predicted_lddt': {'logits': (414, 50)}, 'structure_module': {'final_atom_mask': (414, 37), 'final_atom_positions': (414, 37, 3)}, 'plddt': (414,), 'ranking_confidence': ()}
+I1128 18:01:30.216354 47822399228352 run_AlphaFold2.1.1.py:237] Total JAX model model_1 on HsITPK1 predict time (includes compilation time, see --benchmark): 1260.5s
+I1128 18:01:43.589841 47822399228352 amber_minimize.py:179] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {<Residue 413 (GLN) of chain 0>: ['OXT']}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I1128 18:01:44.018150 47822399228352 amber_minimize.py:407] Minimizing protein, attempt 1 of 100.
+I1128 18:01:45.487527 47822399228352 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1128 18:01:51.154063 47822399228352 amber_minimize.py:179] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I1128 18:02:08.527094 47822399228352 amber_minimize.py:493] Iteration completed: Einit 20640.60 Efinal -7362.05 Time 3.75 s num residue violations 0 num residue exclusions 0 
+I1128 18:02:14.444002 47822399228352 amber_minimize.py:179] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {<Residue 413 (GLN) of chain 0>: ['OXT']}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I1128 18:02:16.055139 47822399228352 run_AlphaFold2.1.1.py:225] Running model model_2 on HsITPK1
+2021-11-28 18:02:17.388230: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-11-28 18:02:17.389352: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties: 
+pciBusID: 0000:3b:00.0 name: Tesla P100-PCIE-16GB computeCapability: 6.0
+coreClock: 1.3285GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2021-11-28 18:02:17.389429: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.11.0
+2021-11-28 18:02:17.389482: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.11
+2021-11-28 18:02:17.389503: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublasLt.so.11
+2021-11-28 18:02:17.389521: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcufft.so.10
+2021-11-28 18:02:17.389540: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcurand.so.10
+2021-11-28 18:02:17.389561: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusolver.so.11
+2021-11-28 18:02:17.389581: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusparse.so.11
+2021-11-28 18:02:17.389601: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudnn.so.8
+2021-11-28 18:02:17.390256: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1862] Adding visible gpu devices: 0
+2021-11-28 18:02:17.390305: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1261] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-11-28 18:02:17.390319: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1267]      0 
+2021-11-28 18:02:17.390329: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 0:   N 
+2021-11-28 18:02:17.390951: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 13272 MB memory) -> physical GPU (device: 0, name: Tesla P100-PCIE-16GB, pci bus id: 0000:3b:00.0, compute capability: 6.0)
+I1128 18:02:28.339584 47822399228352 model.py:165] Running predict with shape(feat) = {'aatype': (32, 414), 'residue_index': (32, 414), 'seq_length': (32,), 'template_aatype': (32, 4, 414), 'template_all_atom_masks': (32, 4, 414, 37), 'template_all_atom_positions': (32, 4, 414, 37, 3), 'template_sum_probs': (32, 4, 1), 'is_distillation': (32,), 'seq_mask': (32, 414), 'msa_mask': (32, 508, 414), 'msa_row_mask': (32, 508), 'random_crop_to_size_seed': (32, 2), 'template_mask': (32, 4), 'template_pseudo_beta': (32, 4, 414, 3), 'template_pseudo_beta_mask': (32, 4, 414), 'atom14_atom_exists': (32, 414, 14), 'residx_atom14_to_atom37': (32, 414, 14), 'residx_atom37_to_atom14': (32, 414, 37), 'atom37_atom_exists': (32, 414, 37), 'extra_msa': (32, 1024, 414), 'extra_msa_mask': (32, 1024, 414), 'extra_msa_row_mask': (32, 1024), 'bert_mask': (32, 508, 414), 'true_msa': (32, 508, 414), 'extra_has_deletion': (32, 1024, 414), 'extra_deletion_value': (32, 1024, 414), 'msa_feat': (32, 508, 414, 49), 'target_feat': (32, 414, 22)}
+I1128 18:21:16.377999 47822399228352 model.py:175] Output shape was {'distogram': {'bin_edges': (63,), 'logits': (414, 414, 64)}, 'experimentally_resolved': {'logits': (414, 37)}, 'masked_msa': {'logits': (508, 414, 23)}, 'predicted_lddt': {'logits': (414, 50)}, 'structure_module': {'final_atom_mask': (414, 37), 'final_atom_positions': (414, 37, 3)}, 'plddt': (414,), 'ranking_confidence': ()}
+I1128 18:21:16.380202 47822399228352 run_AlphaFold2.1.1.py:237] Total JAX model model_2 on HsITPK1 predict time (includes compilation time, see --benchmark): 1128.0s
+I1128 18:21:25.416446 47822399228352 amber_minimize.py:179] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {<Residue 413 (GLN) of chain 0>: ['OXT']}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I1128 18:21:25.835031 47822399228352 amber_minimize.py:407] Minimizing protein, attempt 1 of 100.
+I1128 18:21:26.409351 47822399228352 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1128 18:21:32.592613 47822399228352 amber_minimize.py:179] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I1128 18:21:33.781287 47822399228352 amber_minimize.py:493] Iteration completed: Einit 25804.65 Efinal -7186.98 Time 2.37 s num residue violations 0 num residue exclusions 0 
+I1128 18:21:39.683794 47822399228352 amber_minimize.py:179] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {<Residue 413 (GLN) of chain 0>: ['OXT']}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I1128 18:21:41.628073 47822399228352 run_AlphaFold2.1.1.py:225] Running model model_3 on HsITPK1
+2021-11-28 18:21:42.647649: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-11-28 18:21:42.649362: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties: 
+pciBusID: 0000:3b:00.0 name: Tesla P100-PCIE-16GB computeCapability: 6.0
+coreClock: 1.3285GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2021-11-28 18:21:42.649441: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.11.0
+2021-11-28 18:21:42.649496: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.11
+2021-11-28 18:21:42.649518: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublasLt.so.11
+2021-11-28 18:21:42.649536: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcufft.so.10
+2021-11-28 18:21:42.649555: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcurand.so.10
+2021-11-28 18:21:42.649590: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusolver.so.11
+2021-11-28 18:21:42.649610: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusparse.so.11
+2021-11-28 18:21:42.649630: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudnn.so.8
+2021-11-28 18:21:42.650259: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1862] Adding visible gpu devices: 0
+2021-11-28 18:21:42.650308: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1261] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-11-28 18:21:42.650321: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1267]      0 
+2021-11-28 18:21:42.650331: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 0:   N 
+2021-11-28 18:21:42.650942: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 13272 MB memory) -> physical GPU (device: 0, name: Tesla P100-PCIE-16GB, pci bus id: 0000:3b:00.0, compute capability: 6.0)
+I1128 18:21:53.614100 47822399228352 model.py:165] Running predict with shape(feat) = {'aatype': (32, 414), 'residue_index': (32, 414), 'seq_length': (32,), 'is_distillation': (32,), 'seq_mask': (32, 414), 'msa_mask': (32, 512, 414), 'msa_row_mask': (32, 512), 'random_crop_to_size_seed': (32, 2), 'atom14_atom_exists': (32, 414, 14), 'residx_atom14_to_atom37': (32, 414, 14), 'residx_atom37_to_atom14': (32, 414, 37), 'atom37_atom_exists': (32, 414, 37), 'extra_msa': (32, 5120, 414), 'extra_msa_mask': (32, 5120, 414), 'extra_msa_row_mask': (32, 5120), 'bert_mask': (32, 512, 414), 'true_msa': (32, 512, 414), 'extra_has_deletion': (32, 5120, 414), 'extra_deletion_value': (32, 5120, 414), 'msa_feat': (32, 512, 414, 49), 'target_feat': (32, 414, 22)}
+I1128 18:41:24.180328 47822399228352 model.py:175] Output shape was {'distogram': {'bin_edges': (63,), 'logits': (414, 414, 64)}, 'experimentally_resolved': {'logits': (414, 37)}, 'masked_msa': {'logits': (512, 414, 23)}, 'predicted_lddt': {'logits': (414, 50)}, 'structure_module': {'final_atom_mask': (414, 37), 'final_atom_positions': (414, 37, 3)}, 'plddt': (414,), 'ranking_confidence': ()}
+I1128 18:41:24.180953 47822399228352 run_AlphaFold2.1.1.py:237] Total JAX model model_3 on HsITPK1 predict time (includes compilation time, see --benchmark): 1170.6s
+I1128 18:41:32.117678 47822399228352 amber_minimize.py:179] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {<Residue 413 (GLN) of chain 0>: ['OXT']}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I1128 18:41:33.862287 47822399228352 amber_minimize.py:407] Minimizing protein, attempt 1 of 100.
+I1128 18:41:34.462900 47822399228352 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1128 18:41:39.323244 47822399228352 amber_minimize.py:179] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I1128 18:41:40.574791 47822399228352 amber_minimize.py:493] Iteration completed: Einit 14756.18 Efinal -6941.44 Time 1.93 s num residue violations 0 num residue exclusions 0 
+I1128 18:41:47.839656 47822399228352 amber_minimize.py:179] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {<Residue 413 (GLN) of chain 0>: ['OXT']}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I1128 18:41:48.656375 47822399228352 run_AlphaFold2.1.1.py:225] Running model model_4 on HsITPK1
+2021-11-28 18:41:49.729704: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-11-28 18:41:49.731647: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties: 
+pciBusID: 0000:3b:00.0 name: Tesla P100-PCIE-16GB computeCapability: 6.0
+coreClock: 1.3285GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2021-11-28 18:41:49.731738: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.11.0
+2021-11-28 18:41:49.731792: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.11
+2021-11-28 18:41:49.731821: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublasLt.so.11
+2021-11-28 18:41:49.731839: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcufft.so.10
+2021-11-28 18:41:49.731858: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcurand.so.10
+2021-11-28 18:41:49.731879: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusolver.so.11
+2021-11-28 18:41:49.731908: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusparse.so.11
+2021-11-28 18:41:49.731928: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudnn.so.8
+2021-11-28 18:41:49.732535: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1862] Adding visible gpu devices: 0
+2021-11-28 18:41:49.732586: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1261] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-11-28 18:41:49.732599: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1267]      0 
+2021-11-28 18:41:49.732609: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 0:   N 
+2021-11-28 18:41:49.733224: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 13272 MB memory) -> physical GPU (device: 0, name: Tesla P100-PCIE-16GB, pci bus id: 0000:3b:00.0, compute capability: 6.0)
+I1128 18:42:00.662709 47822399228352 model.py:165] Running predict with shape(feat) = {'aatype': (32, 414), 'residue_index': (32, 414), 'seq_length': (32,), 'is_distillation': (32,), 'seq_mask': (32, 414), 'msa_mask': (32, 512, 414), 'msa_row_mask': (32, 512), 'random_crop_to_size_seed': (32, 2), 'atom14_atom_exists': (32, 414, 14), 'residx_atom14_to_atom37': (32, 414, 14), 'residx_atom37_to_atom14': (32, 414, 37), 'atom37_atom_exists': (32, 414, 37), 'extra_msa': (32, 5120, 414), 'extra_msa_mask': (32, 5120, 414), 'extra_msa_row_mask': (32, 5120), 'bert_mask': (32, 512, 414), 'true_msa': (32, 512, 414), 'extra_has_deletion': (32, 5120, 414), 'extra_deletion_value': (32, 5120, 414), 'msa_feat': (32, 512, 414, 49), 'target_feat': (32, 414, 22)}
+I1128 19:01:28.308519 47822399228352 model.py:175] Output shape was {'distogram': {'bin_edges': (63,), 'logits': (414, 414, 64)}, 'experimentally_resolved': {'logits': (414, 37)}, 'masked_msa': {'logits': (512, 414, 23)}, 'predicted_lddt': {'logits': (414, 50)}, 'structure_module': {'final_atom_mask': (414, 37), 'final_atom_positions': (414, 37, 3)}, 'plddt': (414,), 'ranking_confidence': ()}
+I1128 19:01:28.309078 47822399228352 run_AlphaFold2.1.1.py:237] Total JAX model model_4 on HsITPK1 predict time (includes compilation time, see --benchmark): 1167.6s
+I1128 19:01:36.398855 47822399228352 amber_minimize.py:179] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {<Residue 413 (GLN) of chain 0>: ['OXT']}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I1128 19:01:38.299738 47822399228352 amber_minimize.py:407] Minimizing protein, attempt 1 of 100.
+I1128 19:01:38.920115 47822399228352 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1128 19:01:43.606838 47822399228352 amber_minimize.py:179] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I1128 19:01:44.831081 47822399228352 amber_minimize.py:493] Iteration completed: Einit 11332.47 Efinal -7457.56 Time 1.92 s num residue violations 0 num residue exclusions 0 
+I1128 19:01:52.495455 47822399228352 amber_minimize.py:179] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {<Residue 413 (GLN) of chain 0>: ['OXT']}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I1128 19:01:53.317692 47822399228352 run_AlphaFold2.1.1.py:225] Running model model_5 on HsITPK1
+2021-11-28 19:01:54.395529: I tensorflow/compiler/jit/xla_gpu_device.cc:99] Not creating XLA devices, tf_xla_enable_xla_devices not set
+2021-11-28 19:01:54.396818: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties: 
+pciBusID: 0000:3b:00.0 name: Tesla P100-PCIE-16GB computeCapability: 6.0
+coreClock: 1.3285GHz coreCount: 56 deviceMemorySize: 15.90GiB deviceMemoryBandwidth: 681.88GiB/s
+2021-11-28 19:01:54.396899: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.11.0
+2021-11-28 19:01:54.396954: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.11
+2021-11-28 19:01:54.396976: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublasLt.so.11
+2021-11-28 19:01:54.396994: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcufft.so.10
+2021-11-28 19:01:54.397014: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcurand.so.10
+2021-11-28 19:01:54.397034: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusolver.so.11
+2021-11-28 19:01:54.397054: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcusparse.so.11
+2021-11-28 19:01:54.397075: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudnn.so.8
+2021-11-28 19:01:54.397709: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1862] Adding visible gpu devices: 0
+2021-11-28 19:01:54.397762: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1261] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-11-28 19:01:54.397775: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1267]      0 
+2021-11-28 19:01:54.397785: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 0:   N 
+2021-11-28 19:01:54.398471: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 13272 MB memory) -> physical GPU (device: 0, name: Tesla P100-PCIE-16GB, pci bus id: 0000:3b:00.0, compute capability: 6.0)
+I1128 19:02:05.097312 47822399228352 model.py:165] Running predict with shape(feat) = {'aatype': (32, 414), 'residue_index': (32, 414), 'seq_length': (32,), 'is_distillation': (32,), 'seq_mask': (32, 414), 'msa_mask': (32, 512, 414), 'msa_row_mask': (32, 512), 'random_crop_to_size_seed': (32, 2), 'atom14_atom_exists': (32, 414, 14), 'residx_atom14_to_atom37': (32, 414, 14), 'residx_atom37_to_atom14': (32, 414, 37), 'atom37_atom_exists': (32, 414, 37), 'extra_msa': (32, 1024, 414), 'extra_msa_mask': (32, 1024, 414), 'extra_msa_row_mask': (32, 1024), 'bert_mask': (32, 512, 414), 'true_msa': (32, 512, 414), 'extra_has_deletion': (32, 1024, 414), 'extra_deletion_value': (32, 1024, 414), 'msa_feat': (32, 512, 414, 49), 'target_feat': (32, 414, 22)}
+I1128 19:19:33.122921 47822399228352 model.py:175] Output shape was {'distogram': {'bin_edges': (63,), 'logits': (414, 414, 64)}, 'experimentally_resolved': {'logits': (414, 37)}, 'masked_msa': {'logits': (512, 414, 23)}, 'predicted_lddt': {'logits': (414, 50)}, 'structure_module': {'final_atom_mask': (414, 37), 'final_atom_positions': (414, 37, 3)}, 'plddt': (414,), 'ranking_confidence': ()}
+I1128 19:19:33.123544 47822399228352 run_AlphaFold2.1.1.py:237] Total JAX model model_5 on HsITPK1 predict time (includes compilation time, see --benchmark): 1048.0s
+I1128 19:19:41.334371 47822399228352 amber_minimize.py:179] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {<Residue 413 (GLN) of chain 0>: ['OXT']}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I1128 19:19:41.750460 47822399228352 amber_minimize.py:407] Minimizing protein, attempt 1 of 100.
+I1128 19:19:42.350319 47822399228352 amber_minimize.py:71] Restraining 3202 / 6392 particles.
+I1128 19:19:49.713033 47822399228352 amber_minimize.py:179] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I1128 19:19:50.971775 47822399228352 amber_minimize.py:493] Iteration completed: Einit 13599.12 Efinal -7220.97 Time 2.55 s num residue violations 0 num residue exclusions 0 
+I1128 19:19:57.154199 47822399228352 amber_minimize.py:179] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {<Residue 413 (GLN) of chain 0>: ['OXT']}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I1128 19:19:57.982174 47822399228352 run_AlphaFold2.1.1.py:306] Final timings for HsITPK1: {'features': 2220.6849131584167, 'process_features_model_1': 16.584677696228027, 'predict_and_compile_model_1': 1260.4827044010162, 'relax_model_1': 43.05978012084961, 'process_features_model_2': 12.28308391571045, 'predict_and_compile_model_2': 1128.041752576828, 'relax_model_2': 23.368855953216553, 'process_features_model_3': 11.983941316604614, 'predict_and_compile_model_3': 1170.56875705719, 'relax_model_3': 22.806662797927856, 'process_features_model_4': 12.003815412521362, 'predict_and_compile_model_4': 1167.6479482650757, 'relax_model_4': 23.18007755279541, 'process_features_model_5': 11.77812147140503, 'predict_and_compile_model_5': 1048.0275354385376, 'relax_model_5': 23.018811464309692}
